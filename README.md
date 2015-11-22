@@ -1,4 +1,4 @@
-# fetch-check-http-status
+# fetch-check-http-status [![npm](https://img.shields.io/npm/v/fetch-check-http-status.svg)](https://www.npmjs.com/package/fetch-check-http-status) [![npm](https://img.shields.io/npm/dm/fetch-check-http-status.svg)](https://www.npmjs.com/package/fetch-check-http-status)
 > A simple response handler which rejects fetch requests on any non-2xx response.
 
 see: https://github.com/github/fetch#handling-http-error-statuses
