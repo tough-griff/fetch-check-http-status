@@ -1,0 +1,36 @@
+{
+  "name": "fetch-check-http-status",
+  "version": "1.0.0",
+  "description": "A simple response handler which rejects fetch requests on any non-2xx response.",
+  "keywords": [
+    "fetch",
+    "whatwg",
+    "whatwg-fetch"
+  ],
+  "repository": "tough-griff/fetch-check-http-status",
+  "author": "Griffin Yourick <gryphon92@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir=lib",
+    "clean": "rimraf coverage lib",
+    "test:cov": "babel-node $(npm bin)/isparta cover $(npm bin)/_mocha",
+    "test:watch": "npm run test -- --watch",
+    "test": "mocha --compilers=js:babel-core/register",
+    "preversion": "npm run clean && npm run test:cov",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "expect.js": "^0.3.1",
+    "isparta": "^4.0.0",
+    "mocha": "^2.3.4",
+    "rimraf": "^2.4.4"
+  }
+}
