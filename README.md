@@ -24,3 +24,6 @@ fetch('/data')
     console.log('error!', err);
   });
 ```
+
+## License
+MIT © [Griffin Yourick](https://github.com/tough-griff)
