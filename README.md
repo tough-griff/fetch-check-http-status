@@ -13,7 +13,7 @@ npm install --save fetch-check-http-status
 // ES6
 import checkStatus from 'fetch-check-http-status';
 // or ES5
-var checkStatus = require('fetch-check-http-status');
+var checkStatus = require('fetch-check-http-status').default;
 
 fetch('/data')
   .then(checkStatus)
