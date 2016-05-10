@@ -5,5 +5,5 @@ export default function checkStatus(response) {
 
   const error = new Error(statusText);
   error.response = response;
-  return error;
+  throw error;
 }
