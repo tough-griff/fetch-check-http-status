@@ -3,7 +3,7 @@ import expect from 'expect.js';
 
 import checkStatus from '../src';
 
-describe('checkStatus', () => {
+describe('checkStatus()', () => {
   it('exports a function', () => {
     expect(checkStatus).to.be.a('function');
   });
@@ -14,7 +14,8 @@ describe('checkStatus', () => {
     };
 
     it('returns the response object', () => {
-      expect(checkStatus(response)).to.equal(response);
+      const result = checkStatus(response);
+      expect(result).to.equal(response);
     });
   });
 
@@ -24,14 +25,16 @@ describe('checkStatus', () => {
       statusText: 'The page could not be found',
     };
 
-    const subject = checkStatus(response);
-
-    it('returns an error', () => {
-      expect(subject).to.be.an(Error);
+    it('throws an error', () => {
+      expect(checkStatus).withArgs(response)
+        .to.throwError(/The page could not be found/);
     });
 
     it('attaches the response object to the error', () => {
-      expect(subject.response).to.equal(response);
+      expect(checkStatus).withArgs(response)
+        .to.throwError(err => {
+          expect(err.response).to.equal(response);
+        });
     });
   });
 });
