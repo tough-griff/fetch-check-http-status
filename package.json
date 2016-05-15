@@ -1,6 +1,6 @@
 {
   "name": "fetch-check-http-status",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A simple response handler which rejects fetch requests on any non-2xx response.",
   "keywords": [
     "fetch",
